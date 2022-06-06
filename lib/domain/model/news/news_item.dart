@@ -1,4 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'news_item.freezed.dart';
 part 'news_item.g.dart';
