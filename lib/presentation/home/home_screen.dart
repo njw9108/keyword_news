@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_sorter/data/data_source/get_news_data_source.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,9 +15,7 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {},
       ),
       body: ListView(
-        children: [
-
-        ],
+        children: [],
       ),
     );
   }

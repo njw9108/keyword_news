@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_sorter/presentation/home/home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:news_sorter/presentation/root/root_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      title: 'Keyword News Collector',
+      theme: ThemeData.light().copyWith(
+        secondaryHeaderColor: const Color(0xFF2A2D3E),
       ),
-      home: const HomeScreen(),
+      home: const RootScreen(),
     );
   }
 }
