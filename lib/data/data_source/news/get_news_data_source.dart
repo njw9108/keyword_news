@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:news_sorter/constants/key.dart';
 import 'package:news_sorter/core/result.dart';
 import 'package:news_sorter/domain/model/news/news_info.dart';
+import 'package:news_sorter/util/constants/key.dart';
 
 class GetNewsDataSource {
   final http.Client _client;

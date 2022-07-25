@@ -9,7 +9,7 @@ class KeywordDataSource {
 
   Future<Result<KeywordInfo>> getKeywordById(int id) async {
     List<Map<String, dynamic>> maps = await db.query(
-      'keyword',
+      'keyword_table',
       where: 'id = ?',
       whereArgs: [id],
     );
@@ -21,17 +21,17 @@ class KeywordDataSource {
   }
 
   Future<List<KeywordInfo>> getKeywords() async {
-    List<Map<String, dynamic>> maps = await db.query('keyword');
+    List<Map<String, dynamic>> maps = await db.query('keyword_table');
     return maps.map((e) => KeywordInfo.fromJson(e)).toList();
   }
 
   Future<void> insertKeyword(KeywordInfo keyword) async {
-    await db.insert('keyword', keyword.toJson());
+    await db.insert('keyword_table', keyword.toJson());
   }
 
   Future<void> updateKeyword(KeywordInfo keyword) async {
     await db.update(
-      'keyword',
+      'keyword_table',
       keyword.toJson(),
       where: 'id = ?',
       whereArgs: [keyword.id],
@@ -41,7 +41,7 @@ class KeywordDataSource {
   Future<void> deleteKeyword(KeywordInfo keyword) async {
     // DELETE FROM keyword WHERE id = 10;
     await db.delete(
-      'keyword',
+      'keyword_table',
       where: 'id = ?',
       whereArgs: [keyword.id],
     );

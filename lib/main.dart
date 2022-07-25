@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:news_sorter/di/provider_setup.dart';
 import 'package:news_sorter/presentation/root/root_screen.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  //플랫폼 채널의 위젯 바인딩을 보장한다.
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    MultiProvider(
+      providers: await getProviders(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
